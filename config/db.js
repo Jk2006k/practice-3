@@ -5,7 +5,7 @@ const connnectDb=async()=>{
         mongoose.connect('mongodb+srv://kishoore004:Siva%405@jk.itech.mongodb.net/practice3')
         console.log("MongoDb is connected ")
     }catch(error){
-        console.error(error.message)
+        console.error("connection failed")
 
     }
 }
