@@ -24,7 +24,7 @@ const createbooks=async(req,res)=>{
 const getBooks=async(req,res)=>{
     try{
         const books=await Book.find();
-        res.status(500).json({data:Books});
+        res.status(500).json({data:books});
 
     }catch(error){
         res.status(500).json({message:error.message});

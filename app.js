@@ -3,10 +3,12 @@ const connectDB=require('./config/db')
 const express=require('express')
 const app=express();
 const bookrouter=require('./router/Router')
+const userRoutes=require('./router/UserRoutes')
+const authmiddleware=require('./middleware/authmiddleware')
 
 app.use(express.json())
-app.use("/books",bookrouter)
-
+app.use("/books",authmiddleware,bookrouter)
+app.use('/auth',userRoutes)
 
 app.get('/',  (req, res) =>{
     try {
